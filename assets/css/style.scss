@@ -54,7 +54,12 @@ $sub-footer-text-color: $white;
 @import "components/strip";
 @import "components/feature";
 @import "components/social";
+{% if site.cdn %}
+@import "components/fonts-cdn";
+{% else %}
 @import "components/fonts";
+{% endif %}
+
 
 // Pages
 @import "pages/page-home";

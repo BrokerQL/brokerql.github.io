@@ -8,41 +8,43 @@
       group by 
         account;
       
-     +-----------+------+
-     | account   | cnt  |
-     +-----------+------+
-     | U11739578 |    5 |
-     | U11788663 |    5 |
-     +-----------+------+
+      +-----------+------+
+      | account   | cnt  |
+      +-----------+------+
+      | U11739578 |    5 |
+      | U11788663 |    5 |
+      +-----------+------+
 - title: Explore, connect and join data.
   description: Painlessly join live order data with internal or external data sets to create new trading ideas.
   code: >
-    > select 
-        account, count(*) as cnt
-      from 
-        positions
-      group by 
-        account;
+    > select oca_group, orders.symbol, 
+        max(last) as last, max(lmt_price) as LMT,
+        max(aux_price) as STP 
+      from orders join quotes 
+        on (orders.symbol = quotes.symbol) 
+      where account = 'U11739578' and oca_group != '' 
+        group by 1,2 order by 2;
       
-     +-----------+------+
-     | account   | cnt  |
-     +-----------+------+
-     | U11739578 |    5 |
-     | U11788663 |    5 |
-     +-----------+------+
+      +------------+--------+--------+--------+--------+
+      | oca_group  | symbol | last   | lmt    | stp    |
+      +------------+--------+--------+--------+--------+
+      | 813817692  | ADBE   | 621.72 | 677.59 |  600.2 |
+      | 1526460408 | MHO    | 104.78 | 114.99 | 102.12 |
+      | 267224038  | MSFT   | 378.46 | 417.15 | 369.65 |
+      +------------+--------+--------+--------+--------+
 - title: The market is a live database.
   description: Stop building and maintaining out-of-sync watchlists and point-in-time market snapshots; BrokerQL's live tables give you the current quote of any stock right now.
   code: >
-    > select 
-        account, count(*) as cnt
-      from 
-        positions
-      group by 
-        account;
+    > select symbol, last, 
+        round((last/close-1)*100, 2) as `% chg`
+      from quotes where
+        ask < bid * 1.001 
+      order by `% chg` desc limit 3;
       
-     +-----------+------+
-     | account   | cnt  |
-     +-----------+------+
-     | U11739578 |    5 |
-     | U11788663 |    5 |
-     +-----------+------+
+      +--------+--------+-------+
+      | symbol | last   | % chg |
+      +--------+--------+-------+
+      | AMZN   | 147.13 |  2.24 |
+      | DELL   |   75.0 |  1.87 |
+      | ADBE   | 621.23 |  1.68 |
+      +--------+--------+-------+

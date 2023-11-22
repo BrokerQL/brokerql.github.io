@@ -1,6 +1,7 @@
 baseurl: '/'
 permalink: pretty
 title: 'BrokerQL'
+# cdn: https://cdn.jsdelivr.net
 
 logo:
   mobile: "images/logo/logo-mobile.svg"
