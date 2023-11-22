@@ -1,0 +1,17 @@
+{% assign cdn = '/assets/cdn' | relative_url %}
+{% if site.cdn %}{% assign cdn = site.cdn %}{% endif %}
+
+{% if include.section == 'head' %}
+<link rel="stylesheet" href="{{ cdn }}/npm/asciinema-player@3.6.3/dist/bundle/asciinema-player.min.css">
+<link rel="stylesheet" href="{{ cdn }}/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
+<script src="{{ cdn }}/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+{% endif %}
+
+{% if include.section == 'body' %}
+<script type="text/javascript">
+  hljs.configure({
+    noHighlightRe: /^no-highlight$/i,
+  });
+  hljs.highlightAll();
+</script>
+{% endif %}

@@ -7,11 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="{{ '/images/favicon-32x32.svg' | relative_url }}">
   {% include asciicasts.html section='head'%}
+  {% include highlightjs.html section='head'%}
   <!-- Self host font -->
-  <link rel="preload" href="{{ '/assets/fonts/SteampipeSQL.ttf' | relative_url }}" as="font" crossorigin>
   <link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
-  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
   
   {% if page.description %}<meta name="description" content="{{ page.description }}" />{% endif %}
   {% if page.meta_title %}<meta property="og:title" content="{{ page.meta_title }}"/>{% else %}<meta property="og:title" content="{{ page.title }}"/>{% endif %}
@@ -36,11 +34,6 @@
   <script type="text/javascript" src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
   {% include google-analytics.html %}
   {% include asciicasts.html section='body'%}  
-  <script type="text/javascript">
-      hljs.configure({
-        noHighlightRe: /^no-highlight$/i,
-      });
-      hljs.highlightAll();
-  </script>
+  {% include highlightjs.html section='body'%}  
 </body>
 </html>
