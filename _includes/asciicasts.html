@@ -1,0 +1,14 @@
+{% if page.asciicasts and include.section == 'head' %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/asciinema-player@3.6.3/dist/bundle/asciinema-player.min.css">
+{% endif %}
+
+{% if page.asciicasts and include.section == 'body' %}
+<script src="https://cdn.jsdelivr.net/npm/asciinema-player@3.6.3/dist/bundle/asciinema-player.min.js"></script>
+<script type="text/javascript">
+    AsciinemaPlayer.create('{{ page.asciicasts }}',
+      document.getElementById('terminal'), {
+      loop: true,
+      autoPlay: true,
+    });
+</script>
+{% endif %}
