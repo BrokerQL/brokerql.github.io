@@ -1,0 +1,48 @@
+- title: SQL? Really?
+  description: Yes, SQL. It is an elegant and powerful tool that makes working with multiple APIs simple. SQL levels the playing field for your team, easily integrates with other systems and accelerates delivery.
+  code: >
+    > select 
+        account, count(*) as cnt
+      from 
+        positions
+      group by 
+        account;
+      
+     +-----------+------+
+     | account   | cnt  |
+     +-----------+------+
+     | U11739578 |    5 |
+     | U11788663 |    5 |
+     +-----------+------+
+- title: Explore, connect and join data.
+  description: Painlessly join live order data with internal or external data sets to create new trading ideas.
+  code: >
+    > select 
+        account, count(*) as cnt
+      from 
+        positions
+      group by 
+        account;
+      
+     +-----------+------+
+     | account   | cnt  |
+     +-----------+------+
+     | U11739578 |    5 |
+     | U11788663 |    5 |
+     +-----------+------+
+- title: The market is a live database.
+  description: Stop building and maintaining out-of-sync watchlists and point-in-time market snapshots; BrokerQL's live tables give you the current quote of any stock right now.
+  code: >
+    > select 
+        account, count(*) as cnt
+      from 
+        positions
+      group by 
+        account;
+      
+     +-----------+------+
+     | account   | cnt  |
+     +-----------+------+
+     | U11739578 |    5 |
+     | U11788663 |    5 |
+     +-----------+------+
