@@ -1,0 +1,14 @@
+- question: Which positions are making money?
+  code: >
+    select p.*, q.last, 
+      (q.last - p.avg_cost) * position as pnl
+      from positions p join quotes q
+        on (p.symbol = q.symbol) 
+    where pnl > 0
+- question: Which positions may have large drawback?
+  code: >
+    select p.symbol, q.last, o.aux_price 
+      from positions p join orders o 
+      on (p.symbol = o.symbol and o.order_type = 'STP') 
+      join quotes q on (p.symbol = q.symbol) 
+    where o.aux_price < q.last * 0.9

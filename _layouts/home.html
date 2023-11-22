@@ -27,13 +27,18 @@ bodyClass: "page-home"
 
 {% if site.data.features %}
 <div class="strip strip-grey">
+  
   <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
+    <div class="strip-grey feature" style="border: unset; background-color: unset; align-items: center;">
+      <h2 class="feature-title strip-grey strapline">Query like it's 1992</h2>
+      <p style="max-width: 30rem;">Stop hacking around with scripts; get real work done with
+        the data access standard that's been rocking it for 4 decades.</p>
+    </div>
     <div class="row justify-content-center">
-
       {% for feature in site.data.features %}
       <div class="col-12 col-md-6 col-lg-6 mb-2">
         <div class="feature" style="text-align: left;">
-          <pre><code>{{ feature.code }}</code></pre>
+          <pre><code class="no-highlight">{{ feature.code }}</code></pre>
         </div>
       </div>
       <div class="col-12 col-md-6 col-lg-6 mb-2">
@@ -50,11 +55,20 @@ bodyClass: "page-home"
 {% endif %}
 
 <div class="strip">
-  <div class="feature" style="border: unset;">
-    <h2 class="feature-title">You've got questions, BrokerQL has answers.</h2>
-  </div>
-  
   <div class="container pt-6 pb-6 pb-md-10">
+    <div class="feature" style="border: unset;">
+      <h2 class="feature-title strapline">You've got questions, BrokerQL has answers.</h2>
+    </div>
+    <div class="row justify-content-center">
+      {% for user_case in site.data.user_case %}
+      <div class="col-12 col-md-6 col-lg-6 mb-2">
+        <div class="feature" style="text-align: left;">
+          <h2 class="feature-title">{{ user_case.question }}</h2>
+          <pre><code>{{ user_case.code }}</code></pre>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
     
   </div>
 </div>
