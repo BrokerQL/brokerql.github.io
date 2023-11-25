@@ -2,11 +2,11 @@
 <svg width="300px" height="64px" viewBox="0 0 300 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <style>
     text {
-      fill: black;
+      fill: gray;
     }
     @media (prefers-color-scheme: dark) {
       text {
-        fill: white;
+        fill: gray;
       }
     }
     </style>
