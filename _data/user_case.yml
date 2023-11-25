@@ -9,6 +9,6 @@
   code: >
     select p.symbol, q.last, o.aux_price 
       from positions p join orders o 
-      on (p.symbol = o.symbol and o.order_type = 'STP') 
+    on (p.symbol = o.symbol and o.order_type = 'STP') 
       join quotes q on (p.symbol = q.symbol) 
     where o.aux_price < q.last * 0.9
