@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="300px" height="64px" viewBox="0 0 300 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+    text {
+      fill: black;
+    }
+    </style>
     <title>logo</title>
-    <text x="0" y="58" style="fill:black; font: bold 64px sans-serif;">
+    <text x="0" y="58" style="font: bold 64px sans-serif;">
         <tspan>Broker</tspan><tspan style="fill:red;">QL</tspan>
     </text>
 </svg>
