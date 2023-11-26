@@ -11,3 +11,5 @@ asciicasts: /assets/demo.cast
 # BrokerQL - <span class="strapline">select * from market;</span>
 
 Use SQL to instantly query your online brokers (IBKR and more). Open source CLI. No DB required.
+
+[Download]({% link download.md %}){: .button }

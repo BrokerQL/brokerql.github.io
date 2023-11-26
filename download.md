@@ -9,4 +9,16 @@ intro_image_hide_on_mobile: true
 
 # Download
 
-Comming soon.
+## macOS
+
+
+```bash
+brew tap BrokeQL/tap
+brew install broker-ql
+```
+
+## Windows or Linux
+
+```bash
+pip install BrokerQL
+```
