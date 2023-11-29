@@ -13,7 +13,7 @@ intro_image_hide_on_mobile: true
 
 
 ```bash
-brew tap BrokeQL/tap
+brew tap BrokerQL/tap
 brew install broker-ql
 ```
 
